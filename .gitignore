@@ -1,0 +1,5 @@
+vendor/
+database/amims.db
+.env
+composer.phar
+*.log
