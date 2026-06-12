@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-define('DB_PATH', getenv('DB_PATH') ?: dirname(__DIR__) . '/database/amims.db');
+define('DB_PATH', dirname(__DIR__) . '/database/amims.db');
 
 function getPDO(): PDO {
     static $pdo = null;

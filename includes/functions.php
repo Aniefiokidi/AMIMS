@@ -2,9 +2,7 @@
 declare(strict_types=1);
 
 if (!defined('BASE_URL')) {
-    $protocol = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off')
-        || ($_SERVER['HTTP_X_FORWARDED_PROTO'] ?? '') === 'https'
-        ? 'https' : 'http';
+    $protocol = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') ? 'https' : 'http';
     $host     = $_SERVER['HTTP_HOST'] ?? 'localhost';
     // Walk up 3 levels: script → module-subdir → modules → project-root
     $script   = dirname(dirname(dirname($_SERVER['SCRIPT_NAME'] ?? '/')));

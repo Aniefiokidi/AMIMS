@@ -1,6 +1,6 @@
 <?php
 $sql = file_get_contents(__DIR__ . '/amims_sqlite.sql');
-$dbPath = getenv('DB_PATH') ?: __DIR__ . '/amims.db';
+$dbPath = __DIR__ . '/amims.db';
 
 if (file_exists($dbPath)) unlink($dbPath);
 

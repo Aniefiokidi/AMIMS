@@ -5,12 +5,13 @@ use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
 
-define('MAIL_HOST',       getenv('MAIL_HOST')       ?: 'smtp.gmail.com');
-define('MAIL_USERNAME',   getenv('MAIL_USERNAME')   ?: '');
-define('MAIL_PASSWORD',   getenv('MAIL_PASSWORD')   ?: '');
-define('MAIL_PORT',       (int)(getenv('MAIL_PORT') ?: 587));
-define('MAIL_FROM_EMAIL', getenv('MAIL_FROM_EMAIL') ?: getenv('MAIL_USERNAME') ?: '');
-define('MAIL_FROM_NAME',  getenv('MAIL_FROM_NAME')  ?: 'AMIMS System');
+// Edit only these constants to configure outgoing mail
+define('MAIL_HOST',       'smtp.gmail.com');
+define('MAIL_USERNAME',   'your_email@gmail.com');   // your Gmail address
+define('MAIL_PASSWORD',   'your_app_password');       // Gmail App Password (not account password)
+define('MAIL_PORT',       587);
+define('MAIL_FROM_EMAIL', 'your_email@gmail.com');
+define('MAIL_FROM_NAME',  'AMIMS System');
 define('MAIL_ENCRYPTION', PHPMailer::ENCRYPTION_STARTTLS);
 
 function getMailer(): PHPMailer {
