@@ -140,31 +140,66 @@ PRAGMA foreign_keys = ON;
 -- ============================================================
 
 -- Departments
-INSERT INTO departments (dept_name, description) VALUES
-('Terminal Operations', 'Handles crude oil and petroleum product terminal activities'),
-('IT',                  'Information technology infrastructure and support'),
-('Audit',               'Internal audit and compliance'),
-('HSE',                 'Health, Safety and Environment'),
-('Operations',          'Core oil and gas field operations'),
-('Finance',             'Financial management and accounting'),
-('Maintenance',         'Facility and equipment maintenance');
+INSERT INTO departments (dept_name, description, created_at) VALUES
+('Inventory and Warehouse', 'Storage and inventory control', '2026-06-10 21:37:57'),
+('Production Operations', 'Daily Production and processing activities', '2026-06-10 21:37:57'),
+('Exploration and Production (E&P)', 'Oil and gas exploration and extraction', '2026-06-10 21:37:57'),
+('Reservoir Engineering', 'Reservoir analysis and prduction optimization', '2026-06-10 21:37:57'),
+('Supply Chain and Procurement', 'Purchasing and supplier management', '2026-06-10 21:37:57'),
+('Drilling Operations', 'Well drilling and field development', '2026-06-10 21:37:57'),
+('Engineering and Maintenance', 'Equipment maintenance and technical support', '2026-06-10 21:37:57'),
+('Health, Safety and Environment (HSE)', 'Workplace safety and environmental compliance', '2026-06-10 22:23:37'),
+('Finance and Accounting', 'Financial management and reporting', '2026-06-10 22:58:28'),
+('Internal Audit and Compliance', 'Risk management and regulatory compliance', '2026-06-10 22:59:21'),
+('Human Resources (HR)', 'Employee management and development', '2026-06-10 23:00:08'),
+('Information Technology (IT)', 'Technology Infrastructure and Support', '2026-06-10 23:02:04'),
+('Sales and Marketing', 'Product sales and customer relations', '2026-06-10 23:02:51'),
+('Dispatch and Distirbution', 'Product delivery and logistics coordination', '2026-06-10 23:03:37'),
+('Laboratory and Quality Control', 'Product yesting and quality assurance', '2026-06-10 23:04:11'),
+('Legal and Corporate Affairs', 'Legal services and contract management', '2026-06-10 23:05:07'),
+('Gas Operation', 'Natural gas processing, storage and distribution', '2026-06-10 23:07:43'),
+('Asset Management', 'Asset tracking and lifecycle management', '2026-06-10 23:09:10'),
+('Rig Operations', 'Drilling and well development operations', '2026-06-10 23:09:53'),
+('Geology', 'Geological Analysis and resource  evaluation', '2026-06-10 23:10:58'),
+('Waste Management', 'Waste handling and disposal assets', '2026-06-11 09:52:20');
 
 -- Categories
-INSERT INTO categories (category_name, description) VALUES
-('Chemicals and Additives',  'Corrosion inhibitors, demulsifiers, and other process chemicals'),
-('Safety Equipment',         'PPE, fire suppression, and safety systems'),
-('Mechanical Equipment',     'Pumps, compressors, valves, and mechanical machinery'),
-('Electrical Equipment',     'Panels, transformers, cables, and electrical systems'),
-('Instrumentation',          'Gauges, sensors, flow meters, and control systems'),
-('Vehicles',                 'Field vehicles, trucks, and mobile equipment'),
-('IT Equipment',             'Computers, servers, networking equipment');
+INSERT INTO categories (category_name, description, created_at) VALUES
+('Chemicals and Additives', 'Production and treatment chemicals', '2026-06-10 21:37:57'),
+('Safety Equipment', 'PPE and emergency safety gear', '2026-06-10 21:37:57'),
+('Mechanical Equipment', 'Pumps, valves, and machinery', '2026-06-10 21:37:57'),
+('Electrical Equipment', 'Electrical systems and components', '2026-06-10 21:37:57'),
+('Tools and Instruments', 'Hand tools and measuring devices', '2026-06-10 21:37:57'),
+('Vehicles', 'Transport and operational vehicles', '2026-06-10 21:37:57'),
+('IT Equipment', 'Computers, servers, networking devices', '2026-06-10 21:37:57'),
+('Drilling Equipment', 'Drilling tools and rig equipment', '2026-06-11 09:36:40'),
+('Laboratory Equipment', 'Testing and analysis instruments', '2026-06-11 09:37:20'),
+('Pipes and Fittings', 'Pipelines, fittings and connectors', '2026-06-11 09:39:06'),
+('Gas Processing  Equipments', 'Gas treatment and processing assets', '2026-06-11 09:39:57'),
+('Storage Tanks', 'Crude oil tanks, fuel tanks, LPG tanks, water tanks', '2026-06-11 09:41:27'),
+('Spare Parts', 'Replacement parts for equipment', '2026-06-11 09:42:16'),
+('Marine Equipment', 'Offshore and marine operation assets', '2026-06-11 09:42:56'),
+('Office Equipment', 'Furniture and office devices', '2026-06-11 09:43:32'),
+('Communication', 'Radios and Communication systems', '2026-06-11 09:44:03'),
+('Consumables', 'Frequently used operational supplies', '2026-06-11 09:44:39'),
+('Generators and Power Systems', 'Backup and primary power units', '2026-06-11 09:45:25'),
+('Construction', 'Heavy-duty construction machinery', '2026-06-11 09:46:04'),
+('Waste Management', 'Waste handling and disposal assets', '2026-06-11 09:46:38'),
+('Lubricants and Fuels', 'Equipment fuels and lubricants', '2026-06-11 09:47:18'),
+('Pumps and Compressors', 'Fluid and gas movement equipment', '2026-06-11 09:48:09');
 
--- Users (password hash for 'Admin@1234')
-INSERT INTO users (full_name, email, password_hash, role, dept_id) VALUES
-('System Administrator', 'admin@amims.ng',  '$2y$12$RTgQsx345BTTsGpduCWROOJdfsWJ5EBZK327mKA.oh6d9SOyfLP4.', 'admin',                NULL),
-('David Adeyemi',        'david@amims.ng',  '$2y$12$RTgQsx345BTTsGpduCWROOJdfsWJ5EBZK327mKA.oh6d9SOyfLP4.', 'maintenance_officer',  7),
-('Fatima Aliyu',         'fatima@amims.ng', '$2y$12$RTgQsx345BTTsGpduCWROOJdfsWJ5EBZK327mKA.oh6d9SOyfLP4.', 'maintenance_officer',  7),
-('Chukwuemeka Obi',      'emeka@amims.ng',  '$2y$12$RTgQsx345BTTsGpduCWROOJdfsWJ5EBZK327mKA.oh6d9SOyfLP4.', 'manager',             5);
+-- Users
+INSERT INTO users (full_name, email, password_hash, role, dept_id, is_active, created_at) VALUES
+('System Administrator', 'adike.2200191@stu.cu.edu.ng', '$2y$12$RTgQsx345BTTsGpduCWROOJdfsWJ5EBZK327mKA.oh6d9SOyfLP4.', 'admin', NULL, '1', '2026-06-10 21:37:57'),
+('Ebele Dike', 'ebele.dike@yahoo.com', '$2y$12$RTgQsx345BTTsGpduCWROOJdfsWJ5EBZK327mKA.oh6d9SOyfLP4.', 'manager', '9', '1', '2026-06-10 21:37:57'),
+('Chioma Ebeh', 'chioma@amims.ng', '$2y$12$RTgQsx345BTTsGpduCWROOJdfsWJ5EBZK327mKA.oh6d9SOyfLP4.', 'manager', '20', '1', '2026-06-10 21:37:57'),
+('Lotanna Tyrese', 'lotanna@amims.ng', '$2y$12$RTgQsx345BTTsGpduCWROOJdfsWJ5EBZK327mKA.oh6d9SOyfLP4.', 'maintenance_officer', '7', '1', '2026-06-10 21:37:57'),
+('Nkechi Chizea', 'nkechi@amims.ng', '$2y$12$6d4z9gJ5.piVF/r6Bb5FMON7IchxxU52/3IYAVYzfO/sglOvFkGqy', 'manager', '3', '1', '2026-06-10 23:19:38'),
+('Samuel Omondeagbon', 'omondeagbon.samuel@gmail.com', '$2y$12$U7zQw1MWLiNIm5Wq.xpsRO3yAgAjpuLesE1hmY0s4jGPcEn3Jx3A6', 'maintenance_officer', '12', '1', '2026-06-10 23:21:04'),
+('Gbemi Obilanade', 'gbemesola56@gmail.com', '$2y$12$aGIfhhU7JcVl7s24Un4t8uDvhVAluWqIL0P3IZdb1/2ml9UVyultW', 'manager', '16', '1', '2026-06-11 13:36:49'),
+('Mabel Baker', 'mabel@amims.ng', '$2y$12$RoK..oIG2HsJSJdDuuCqLO0krBSusknzFXgjl8o6wu.07TX7r4Q0C', 'manager', '11', '1', '2026-06-11 17:40:21'),
+('Esther Osakuade', 'esther@amims.ng', '$2y$12$GW2y8jXEiCRM0JwvLLKmde0BISktB0tKut49bz7sQb.0KPLfrZMxC', 'manager', '12', '1', '2026-06-12 12:10:39'),
+('Amarachi Dike', 'amara.dike14@gmail.com', '$2y$12$0lcUVvACB4R5dNIPQKRCzudVqvWp6sh3ABYn9Du6hXNF2ZiWCe6Tu', 'manager', '4', '1', '2026-06-12 17:12:30');
 
 -- Assets
 INSERT INTO assets (asset_name, asset_tag, category_id, dept_id, condition, purchase_date, purchase_cost, assigned_to) VALUES
