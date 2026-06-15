@@ -3,7 +3,7 @@
     "description": "Asset, Maintenance and Inventory Management System for Oil and Gas Companies",
     "type": "project",
     "require": {
-        "php": ">=8.0",
+        "php": ">=8.2",
         "phpmailer/phpmailer": "^6.9",
         "tecnickcom/tcpdf": "^6.7"
     },
